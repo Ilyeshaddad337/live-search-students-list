@@ -2,11 +2,11 @@ var columns = [];
 let names = [];
 let searchTerm;
 
-
+const numberOfResults = document.querySelector(".num");
 const input = document.querySelector('#nameField');
 const removeBtn = document.querySelector(".remove-names");
 const ul = document.querySelector('ul');
-const p = document.querySelector('p');
+const p = document.querySelector('.listItem');
 const results = document.querySelector('.results');
 
 
@@ -49,7 +49,13 @@ function showList() {
       li.innerHTML = `<span> ${name} ${first} </span> 
       ${e[2]}  `;
       
-    })
+    });
+
+  
+    numberOfResults.innerHTML = `The number of results is: ${ul.querySelectorAll("li").length}`;
+    
+   
+    
    }
 
 
@@ -61,7 +67,7 @@ function showList() {
 input.addEventListener('input', (event) => {
    ul.innerHTML = "";
    searchTerm = event.target.value.toLowerCase();
-   
+    numberOfResults.classList.remove("hide");
    showList();
 });
 
@@ -71,6 +77,7 @@ function remove() {
    input.value ="";
    p.classList.add("hide");
    results.classList.remove('border');
+   numberOfResults.classList.add('hide');
 }
 
 removeBtn.addEventListener('click', remove)
