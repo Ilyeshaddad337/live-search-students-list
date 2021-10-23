@@ -18,11 +18,22 @@ body {
    flex-direction: row;
    justify-content: center;
    align-items: center;
+   width: 100%;
+   
 }
 .search {
    background-color: rgba(37, 26, 187, 0.794);
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
 }
 
+.num-of-students {
+   text-align: center;
+   font-weight: 700;
+   font-size: 1.2rem;
+}
 #nameField {
    width: 80%;
    border-radius: 2.1rem;
